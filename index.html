@@ -1,146 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BigTree Creamer Milk</title>
-    <meta name="description" content="Big Tree Creamer Milk brings rich, creamy goodness to every cup. Perfect for coffee, tea, and recipes, our milk creamer is a dedication to joy, taste, and freshness. Explore our flavors and share the smile!">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BigTree Creamer Milk</title>
+<style>
+/* GENERAL */
+body{margin:0;font-family:Arial,sans-serif;transition:0.4s;background:#f9f9f9;}
+.dark{background:#121212;color:white;}
+.container{width:90%;margin:auto;padding:60px 0;text-align:center;}
+h2{margin-bottom:20px;color:#333;}
+
+/* HEADER */
+header{background:#2e7d32;color:white;display:flex;justify-content:space-between;padding:15px 30px;align-items:center;}
+
+/* HERO */
+.hero{height:90vh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url("https://images.unsplash.com/photo-1550583724-b2692b85b150");background-size:cover;color:white;}
+.hero h1{font-size:50px;animation:fadeIn 2s;}
+.hero p{font-size:22px;margin:20px 0;}
+.hero button{padding:15px 30px;background:#ff9800;border:none;color:white;border-radius:8px;cursor:pointer;}
+.hero button:hover{background:#e68900;}
+@keyframes fadeIn{from{opacity:0; transform:translateY(40px);}to{opacity:1; transform:translateY(0);}}
+
+/* FEATURE CARDS */
+.feature-grid{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;}
+.feature-card{background:white;padding:25px;width:250px;border-radius:15px;box-shadow:0 4px 15px rgba(0,0,0,0.1);transition:0.4s;}
+.feature-card:hover{transform:translateY(-10px);}
+
+/* SHOP */
+.shop-item{border:1px solid #ddd;padding:20px;border-radius:12px;width:250px;margin:10px;}
+.shop-grid{display:flex;flex-wrap:wrap;justify-content:center;}
+.shop-item img{border-radius:10px; width:100%;}
+.shop-item label{display:block;margin:10px 0;}
+
+/* CART */
+.cart{background:#fff;padding:20px;margin-top:20px;border-radius:10px;}
+
+/* DISTRIBUTOR */
+.distributor{background:#2e7d32;color:white;padding:40px;}
+
+/* CHATBOT */
+.chatbot{position:fixed;bottom:20px;right:90px;width:250px;background:white;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,0.3);display:none;padding:15px;}
+.chatbot input{width:100%;padding:8px;}
+
+/* WHATSAPP MULTI BUTTON RIGHT */
+.whatsapp-container{position:fixed;bottom:20px;right:20px;}
+.whatsapp-main{font-size:35px;cursor:pointer;}
+.whatsapp-options{display:none;flex-direction:column;}
+.whatsapp-options a{font-size:28px;margin-top:10px;text-decoration:none;}
+
+/* DARK TOGGLE */
+.dark-toggle{position:fixed;top:20px;right:20px;cursor:pointer;font-size:22px;}
+
+/* PRODUCT GALLERY */
+.slider{display:flex;overflow:auto;gap:20px;padding:20px;}
+.slider img{height:200px;border-radius:15px;}
+</style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <h1><span class="logo">🌲</span> BigTree Creamer Milk</h1>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <!-- Home Section -->
-    <section id="home" class="hero fade-in">
-        <div class="container">
-            <h2>Fresh. Creamy. Delicious.</h2>
-            <p>Discover the joy of BigTree Creamer Milk in every cup!</p>
-            <a href="#contact" class="btn">Contact Us</a>
-        </div>
-    </section>
+<!-- DARK MODE -->
+<div class="dark-toggle" onclick="toggleDark()">🌙</div>
 
-    <!-- About Section -->
-    <section id="about" class="fade-in">
-        <div class="container">
-            <h2>About BigTree Creamer</h2>
-            <p>BigTree Creamer Milk is dedicated to bringing creamy goodness to your table. Perfect for coffee, tea, and recipes, our milk creamer is a dedication to joy, taste, and freshness.</p>
-        </div>
-    </section>
+<header>
+<h2>🌲 Smile Creamer Milk</h2>
+</header>
 
-    <!-- Products Section -->
-    <section id="products" class="fade-in">
-        <div class="container">
-            <h2>Our Products</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/300x200?text=Classic+Creamer" alt="Classic Creamer">
-                    <h3>Classic Creamer</h3>
-                    <p>Rich and smooth, perfect for every beverage.</p>
-                    <a href="#contact" class="btn">Order Now</a>
-                </div>
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/300x200?text=Vanilla+Delight" alt="Vanilla Delight">
-                    <h3>Vanilla Delight</h3>
-                    <p>A hint of vanilla to sweeten your day.</p>
-                    <a href="#contact" class="btn">Order Now</a>
-                </div>
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/300x200?text=Chocolate+Cream" alt="Chocolate Cream">
-                    <h3>Chocolate Cream</h3>
-                    <p>Decadent chocolate flavor for special moments.</p>
-                    <a href="#contact" class="btn">Order Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="hero">
+<h1>BigTree Creamer Milk</h1>
+<p>Fresh, Creamy and Delicious.</p>
+<button onclick="document.getElementById('shop').scrollIntoView()">Shop Now</button>
+</section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="fade-in">
-        <div class="container">
-            <h2>Gallery</h2>
-            <div class="gallery-grid">
-                <img src="https://via.placeholder.com/300x200?text=Creamer+1" alt="Creamer Image 1">
-                <img src="https://via.placeholder.com/300x200?text=Creamer+2" alt="Creamer Image 2">
-                <img src="https://via.placeholder.com/300x200?text=Creamer+3" alt="Creamer Image 3">
-                <img src="https://via.placeholder.com/300x200?text=Creamer+4" alt="Creamer Image 4">
-            </div>
-        </div>
-    </section>
+<!-- FEATURE CARDS -->
+<section class="container">
+<h2>Premium Features</h2>
+<div class="feature-grid">
+<div class="feature-card">🌍 Global Quality</div>
+<div class="feature-card">⚙️ Advanced Technology</div>
+<div class="feature-card">☕ Flavor Boost</div>
+<div class="feature-card">✅ Certified Safe</div>
+</div>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="fade-in">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p>Send us a message or fill the form below to get in touch!</p>
-            <!-- Google Form Embed -->
-            <iframe src="YOUR_GOOGLE_FORM_EMBED_LINK" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-        </div>
-    </section>
+<!-- PRODUCT SHOP -->
+<section class="container" id="shop">
+<h2>Available Carton Packages</h2>
+<div class="shop-grid">
 
-    <!-- WhatsApp Floating Buttons -->
-    <div class="whatsapp-container">
-        <div class="whatsapp-btn" data-number="08093645195" title="Chat with C.E.O (Usman UH)">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-            <span>C.E.O (Usman UH)</span>
-        </div>
-        <div class="whatsapp-btn" data-number="08033378739" title="Chat with Bob">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-            <span>Manager (Makinu)</span>
-        </div>
-    </div>
+<!-- 36g Carton -->
+<div class="shop-item">
+<h3>36g Carton</h3>
+<img src="https://picsum.photos/200/150?carton36">
+<p>Contains multiple 36g sachets packaged for wholesale and bulk supply.</p>
+<p>₦18,000 per carton</p>
+<label>Qty: <input type="number" min="1" value="1" id="qty36"></label>
+<button onclick="addCart('36g Carton',18000,parseInt(document.getElementById('qty36').value))">Add Carton</button>
+</div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 BigTree Creamer Milk. All rights reserved.</p>
-        </div>
-    </footer>
+<!-- 12g Carton -->
+<div class="shop-item">
+<h3>12g Carton</h3>
+<img src="https://picsum.photos/200/150?carton12">
+<p>Bulk carton containing 12g sachets for convenience and commercial use.</p>
+<p>₦6,000 per carton</p>
+<label>Qty: <input type="number" min="1" value="1" id="qty12"></label>
+<button onclick="addCart('12g Carton',6000,parseInt(document.getElementById('qty12').value))">Add Carton</button>
+</div>
 
-    <!-- JavaScript -->
-    <script>
-        // Smooth scrolling for menu links
-        const links = document.querySelectorAll('header nav ul li a');
-        links.forEach(link => {
-            link.addEventListener('click', e => {
-                e.preventDefault();
-                const target = document.querySelector(link.getAttribute('href'));
-                target.scrollIntoView({ behavior: 'smooth' });
-            });
-        });
+</div>
 
-        // Fade-in animation for sections
-        const sections = document.querySelectorAll('section');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting){
-                    entry.target.classList.add('fade-in-active');
-                }
-            });
-        }, { threshold: 0.1 });
-        sections.forEach(section => observer.observe(section));
+<div class="cart">
+<h3>Your Cart</h3>
+<ul id="cartList"></ul>
+<p><strong>Total: ₦<span id="cartTotal">0</span></strong></p>
+<!-- Checkout Button -->
+https://docs.google.com/forms/d/e/1FAIpQLSeN5BJnGQyhSVWyT_BDnsezu1Tm3BbXguNU5ObxrKDUFIXGow/viewform?usp=header
+    <button onclick="checkout()">Checkout via WhatsApp</button>
+</a>
+</div>
+</section>
 
-        // WhatsApp click handler for multiple numbers
-        document.querySelectorAll('.whatsapp-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const number = btn.getAttribute('data-number');
-                window.open(`https://wa.me/${number}`, '_blank');
-            });
-        });
-    </script>
+<!-- DISTRIBUTOR PORTAL -->
+<section class="distributor">
+<h2>Become a Distributor</h2>
+<p>Partner with us to supply premium creamer across Nigeria.</p>
+<button onclick="alert('Distributor application coming soon')">Apply Now</button>
+</section>
+
+<!-- PRODUCT GALLERY -->
+<section class="container">
+<h2>Our Products</h2>
+<div class="slider">
+<img src="https://picsum.photos/300/200?1">
+<img src="https://picsum.photos/300/200?2">
+<img src="https://picsum.photos/300/200?3">
+<img src="https://picsum.photos/300/200?4">
+</div>
+</section>
+
+<!-- CHATBOT -->
+<div class="chatbot" id="chatbot">
+<h4>Smile Assistant</h4>
+<p id="chatResponse">Hi 👋 Ask me about our products</p>
+<input type="text" id="chatInput" placeholder="Ask something..." onchange="chatBot()">
+</div>
+
+<!-- WHATSAPP MULTI CONTACT RIGHT -->
+<div class="whatsapp-container">
+<div class="whatsapp-main" onclick="toggleWhatsApp()">💬</div>
+<div class="whatsapp-options" id="whatsappOptions">
+<a href="https://wa.me/2348093645195">👨 Sales</a>
+<a href="https://wa.me/2348033378739">🏢 Distributor</a>
+<a href="https://wa.me/2348033112011">👨 Support</a>
+
+</div>
+</div>
+
+<script>
+/* DARK MODE */
+function toggleDark(){document.body.classList.toggle("dark");}
+
+/* CART SYSTEM */
+let cartItems=[];
+let cartTotal=0;
+function addCart(name,price,qty){
+    if(qty<1) return;
+    cartItems.push({name,price,qty});
+    renderCart();
+}
+function renderCart(){
+    let list=document.getElementById("cartList");
+    list.innerHTML="";
+    cartTotal=0;
+    cartItems.forEach(item=>{
+        let li=document.createElement("li");
+        li.textContent=`${item.qty} × ${item.name} — ₦${item.price*item.qty}`;
+        list.appendChild(li);
+        cartTotal+=item.price*item.qty;
+    });
+    document.getElementById("cartTotal").textContent=cartTotal;
+}
+
+/* CHATBOT */
+function chatBot(){
+let input=document.getElementById("chatInput").value.toLowerCase();
+let response="";
+if(input.includes("price")) response="Please contact sales on WhatsApp";
+else if(input.includes("product")) response="We sell premium milk creamer.";
+else response="Our team will assist you soon.";
+document.getElementById("chatResponse").textContent=response;
+}
+
+/* WHATSAPP TOGGLE */
+function toggleWhatsApp(){
+let menu=document.getElementById("whatsappOptions");
+menu.style.display=(menu.style.display==="flex")?"none":"flex";
+}
+
+/* CHECKOUT TO WHATSAPP */
+function checkout(){
+    if(cartItems.length===0){alert("Cart is empty"); return;}
+    // Cart summary
+    let message="Hello Smile Creamer,\n\nI just completed the order form.\n\nMy Order Details:\n";
+    cartItems.forEach(item=>{
+        message+=`${item.qty} × ${item.name} — ₦${item.price*item.qty}\n`;
+    });
+    message+=`Total: ₦${cartTotal}\n\n`;
+    message+="Name: [Optional]\nLocation: [Optional]\n\nPlease assist with payment.";
+    // Open WhatsApp
+    let url="https://wa.me/2348093645195?text="+encodeURIComponent(message);
+    window.open(url,"_blank");
+}
+</script>
+
 </body>
 </html>
