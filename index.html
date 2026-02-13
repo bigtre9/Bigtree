@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BigTree Creamer Milk</title>
+    <meta name="description" content="Big Tree Creamer Milk brings rich, creamy goodness to every cup. Perfect for coffee, tea, and recipes, our milk creamer is a dedication to joy, taste, and freshness. Explore our flavors and share the smile!">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1><span class="logo">🌲</span> BigTree Creamer Milk</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="hero fade-in">
+        <div class="container">
+            <h2>Fresh. Creamy. Delicious.</h2>
+            <p>Discover the joy of BigTree Creamer Milk in every cup!</p>
+            <a href="#contact" class="btn">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="fade-in">
+        <div class="container">
+            <h2>About BigTree Creamer</h2>
+            <p>BigTree Creamer Milk is dedicated to bringing creamy goodness to your table. Perfect for coffee, tea, and recipes, our milk creamer is a dedication to joy, taste, and freshness.</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="fade-in">
+        <div class="container">
+            <h2>Our Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200?text=Classic+Creamer" alt="Classic Creamer">
+                    <h3>Classic Creamer</h3>
+                    <p>Rich and smooth, perfect for every beverage.</p>
+                    <a href="#contact" class="btn">Order Now</a>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200?text=Vanilla+Delight" alt="Vanilla Delight">
+                    <h3>Vanilla Delight</h3>
+                    <p>A hint of vanilla to sweeten your day.</p>
+                    <a href="#contact" class="btn">Order Now</a>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200?text=Chocolate+Cream" alt="Chocolate Cream">
+                    <h3>Chocolate Cream</h3>
+                    <p>Decadent chocolate flavor for special moments.</p>
+                    <a href="#contact" class="btn">Order Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="fade-in">
+        <div class="container">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <img src="https://via.placeholder.com/300x200?text=Creamer+1" alt="Creamer Image 1">
+                <img src="https://via.placeholder.com/300x200?text=Creamer+2" alt="Creamer Image 2">
+                <img src="https://via.placeholder.com/300x200?text=Creamer+3" alt="Creamer Image 3">
+                <img src="https://via.placeholder.com/300x200?text=Creamer+4" alt="Creamer Image 4">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="fade-in">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Send us a message or fill the form below to get in touch!</p>
+            <!-- Google Form Embed -->
+            <iframe src="YOUR_GOOGLE_FORM_EMBED_LINK" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+    </section>
+
+    <!-- WhatsApp Floating Buttons -->
+    <div class="whatsapp-container">
+        <div class="whatsapp-btn" data-number="08093645195" title="Chat with C.E.O (Usman UH)">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            <span>C.E.O (Usman UH)</span>
+        </div>
+        <div class="whatsapp-btn" data-number="08033378739" title="Chat with Bob">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            <span>Bob</span>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 BigTree Creamer Milk. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Smooth scrolling for menu links
+        const links = document.querySelectorAll('header nav ul li a');
+        links.forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Fade-in animation for sections
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add('fade-in-active');
+                }
+            });
+        }, { threshold: 0.1 });
+        sections.forEach(section => observer.observe(section));
+
+        // WhatsApp click handler for multiple numbers
+        document.querySelectorAll('.whatsapp-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const number = btn.getAttribute('data-number');
+                window.open(`https://wa.me/${number}`, '_blank');
+            });
+        });
+    </script>
+</body>
+</html>
